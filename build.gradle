@@ -10,8 +10,11 @@ repositories {
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-picocli'
     implementation 'io.quarkus:quarkus-arc'
+    implementation 'io.quarkus:quarkus-jsonb'
+    implementation 'io.quarkus:quarkus-mutiny'
+    implementation 'io.quarkus:quarkus-picocli'
+    testImplementation 'com.github.tomakehurst:wiremock:2.27.2'
     testImplementation 'io.quarkus:quarkus-junit5'
 }
 
@@ -19,8 +22,8 @@ group 'com.github'
 version '1.0.0-SNAPSHOT'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_16
+    targetCompatibility = JavaVersion.VERSION_16
 }
 
 compileJava {
